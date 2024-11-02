@@ -15,8 +15,7 @@ app.use(express.static('public'));
 
 
 // Connect to MongoDB
-//mongoose.connect(process.env.MONGODB_URI)
-mongoose.connect(process.env.AZURE_COSMO_URI)
+mongoose.connect(process.env.MONGODB_URI)
     .then(() => console.log("Connected to MongoDB"))
     .catch((error) => console.error("MongoDB connection error:", error));
 
