@@ -9,10 +9,6 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use('/api/auth', authRoutes);
 
-// Root route
-app.get('/', (req, res) => {
-    res.send("Hello, World!");
-});
 
 // Serve static files from the "public" directory
 app.use(express.static('public'));
