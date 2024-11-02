@@ -9,6 +9,11 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use('/api/auth', authRoutes);
 
+// Root route
+app.get('/', (req, res) => {
+    res.send("Hello, World!");
+});
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => console.log("Connected to MongoDB"))
