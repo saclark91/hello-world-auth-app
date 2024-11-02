@@ -14,6 +14,10 @@ app.get('/', (req, res) => {
     res.send("Hello, World!");
 });
 
+// Serve static files from the "public" directory
+app.use(express.static('public'));
+
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => console.log("Connected to MongoDB"))
