@@ -25,7 +25,12 @@ function login() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Server error");
+        }
+        return response.json();
+    })
     .then(data => {
         if (data.token) {
             localStorage.setItem("token", data.token);
